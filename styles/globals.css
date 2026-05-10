@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fca311;
+  --color-secondary: #14213d;
+  --color-on-primary: #14213d;
+  --color-on-secondary: #ffffff;
+  --color-surface: #ffffff;
+  --color-on-surface: #14213d;
+  --color-on-surface-variant: #45464e;
+  --color-surface-container-low: #f8f9fa;
+  --color-surface-container-high: #e5e5e5;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 33, 61, 0.95) 0%,
+    rgba(20, 33, 61, 0.7) 100%
+  );
+}
