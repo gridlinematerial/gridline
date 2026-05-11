@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message, phone } = body;
 
     const data = await resend.emails.send({
       from: "GridLine <info@gridlinematerial.com>",
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
 
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Subject:</strong> ${subject}</p>
           
           <p><strong>Message:</strong></p>

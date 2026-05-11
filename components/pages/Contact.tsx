@@ -13,6 +13,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -44,6 +45,7 @@ function Contact() {
         name: "",
         email: "",
         subject: "",
+        phone: "",
         message: "",
       });
     } catch (error) {
@@ -157,6 +159,28 @@ function Contact() {
                 { label: "Partnership Proposal", value: "partnership" },
                 { label: "Logistics Query", value: "logistics" },
               ]}
+            />
+
+            <AppInput
+              required
+              type="tel"
+              label="Phone Number"
+              placeholder="Enter phone number"
+              value={formData.phone}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+
+                if (value.length <= 10) {
+                  setFormData((prev) => ({
+                    ...prev,
+                    phone: value,
+                  }));
+                }
+              }}
+              pattern="[0-9]{10}"
+              maxLength={10}
+              title="Please enter a valid 10-digit phone number"
+              className="md:col-span-2"
             />
 
             <AppTextarea
