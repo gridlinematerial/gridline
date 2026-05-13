@@ -118,6 +118,7 @@ function Contact() {
               <AppInput
                 label="Your Name"
                 placeholder="John Doe"
+                required
                 value={formData.name}
                 onChange={(e) =>
                   setFormData((prev) => ({
@@ -131,6 +132,7 @@ function Contact() {
                 type="email"
                 label="Email Address"
                 placeholder="john@company.com"
+                required
                 value={formData.email}
                 onChange={(e) =>
                   setFormData((prev) => ({
